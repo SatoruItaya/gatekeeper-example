@@ -1,0 +1,9 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: PdbMaxUnavailable
+metadata:
+  name: maxunavailable-must-be-larger-than-zero
+spec:
+  match:
+    kinds:
+      - apiGroups: ["policy"]
+        kinds: ["PodDisruptionBudget"]

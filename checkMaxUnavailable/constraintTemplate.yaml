@@ -1,0 +1,25 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: pdbmaxunavailable
+spec:
+  crd:
+    spec:
+      names:
+        kind: PdbMaxUnavailable
+      validation:
+        openAPIV3Schema:
+          properties:
+            maxUnavailable:
+              type: integer
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package pdbmaxunavailable
+       
+        violation[{"msg": msg, "details": {}}] {
+          spec := input.review.object.spec.maxUnavailable
+          satisfied := [ok | ok := maxUnavailable > 0]
+          not all(satisfied)
+          msg := "maxUnavailable must be larger than 0."
+        }  
