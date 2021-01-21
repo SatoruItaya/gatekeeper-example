@@ -17,3 +17,7 @@ $ kubectl delete crd \
     constrainttemplatepodstatuses.status.gatekeeper.sh \
     constrainttemplates.templates.gatekeeper.sh
 ```
+
+## Reference
+
+- [open-policy-agent/gatekeeper](https://github.com/open-policy-agent/gatekeeper#how-to-use-gatekeeper)
