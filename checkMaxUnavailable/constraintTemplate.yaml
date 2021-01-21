@@ -18,7 +18,7 @@ spec:
         package pdbmaxunavailable
        
         violation[{"msg": msg, "details": {}}] {
-          spec := input.review.object.spec.maxUnavailable
+          maxUnavailable := input.review.object.spec.maxUnavailable
           satisfied := [ok | ok := maxUnavailable > 0]
           not all(satisfied)
           msg := "maxUnavailable must be larger than 0."
