@@ -21,5 +21,5 @@ spec:
           maxUnavailable := input.review.object.spec.maxUnavailable
           satisfied := [ok | ok := maxUnavailable > 0]
           not all(satisfied)
-          msg := "maxUnavailable must be larger than 0."
+          msg := "maxUnavailable must be bigger than 0."
         }  
