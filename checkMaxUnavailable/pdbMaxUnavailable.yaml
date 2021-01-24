@@ -1,7 +1,7 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: PdbMaxUnavailable
 metadata:
-  name: maxunavailable-must-be-larger-than-zero
+  name: maxunavailable-must-be-bigger-than-zero
 spec:
   match:
     kinds:
