@@ -1,0 +1,12 @@
+environments:
+  {{ .Environment.Name }}:
+    values:
+      - {{ .Environment.Name }}-values.yaml
+releases:
+  - name: gatekeeper
+    namespace: kube-system
+    chart: gatekeeper/gatekeeper
+    version: v3.2.3
+    values: 
+      - values.yaml.gotmpl
+

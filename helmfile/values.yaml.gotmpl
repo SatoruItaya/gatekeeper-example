@@ -1,0 +1,7 @@
+replicas: {{ .Values.replicas }}
+controllerManager:
+  resources:
+{{ toYaml .Values.controllerManager.resources | indent 2 }}
+audit:
+  resources:
+{{ toYaml .Values.audit.resources | indent 2 }}

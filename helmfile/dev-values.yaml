@@ -1,0 +1,17 @@
+replicas: 1
+controllerManager:
+  resources:
+    limits:
+      cpu: 64m
+      memory: 128Mi
+    requests:
+      cpu: 64m
+      memory: 128Mi
+audit:
+  resources:
+    limits:
+      cpu: 64m
+      memory: 128Mi
+    requests:
+      cpu: 64m
+      memory: 128Mi
